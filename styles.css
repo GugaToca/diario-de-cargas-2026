@@ -61,6 +61,7 @@ body {
   max-width: 420px;
 }
 
+/* COR DO FORMULÁRIO DE LOGIN/REGISTRO */
 .auth-card {
   background: rgba(11, 53, 143, 0.548);
   border-radius: 20px;
@@ -137,8 +138,8 @@ body {
   gap: 12px;
   padding: 10px 14px;
   border-radius: 18px;
-  background: rgba(15, 23, 42, 0.9);
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgb(3, 39, 122); /*COR DO HEADER DO CAMPO DE CARGA*/
+  border: 1px solid rgba(55, 119, 209, 0.658);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
   margin-bottom: 14px;
@@ -209,10 +210,10 @@ body {
 /* ===== CARDS ===== */
 
 .card {
-  background: rgba(15, 23, 42, 0.95);
+  background: rgba(2, 33, 105, 0.95);
   border-radius: 18px;
   padding: 16px 14px;
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  border: 1px solid rgba(118, 149, 192, 0.603);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(16px);
 }
@@ -254,7 +255,7 @@ body {
   border: 1px solid rgba(148, 163, 184, 0.55);
   padding: 8px 9px;
   font-size: 13px;
-  background: var(--input-bg);
+  background: #09208ae3;
   color: var(--text-main);
   outline: none;
   transition: border-color var(--transition-fast),
@@ -415,8 +416,7 @@ button {
 .summary-item {
   padding: 10px 10px;
   border-radius: 14px;
-  background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.15), transparent 55%),
-    rgba(15, 23, 42, 0.9);
+  background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.15), transparent 55%), #071d7a;
   border: 1px solid rgba(148, 163, 184, 0.55);
   display: flex;
   flex-direction: column;
