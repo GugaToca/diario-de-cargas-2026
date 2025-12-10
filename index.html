@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diário de Cargas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="app-page">
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-header__left">
+        <div class="logo-circle">DC</div>
+        <div>
+          <h1 class="app-title">Diário de Cargas</h1>
+          <p class="app-subtitle">Controle diário simples e moderno</p>
+        </div>
+      </div>
+      <div class="app-header__right">
+        <div class="user-pill">
+          <span class="user-avatar">👤</span>
+          <span id="usuario-nome" class="user-name">Carregando...</span>
+        </div>
+        <button id="btn-logout" class="btn-ghost">Sair</button>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="app-grid">
+        <!-- Card de cadastro/edição -->
+        <section class="card form-card">
+          <div class="card-header">
+            <h2>Cadastrar carga</h2>
+            <p class="card-caption">Preencha os dados da carga para registrar.</p>
+          </div>
+          <form id="carga-form" class="form-grid">
+            <div class="form-group">
+              <label for="data">Data *</label>
+              <input type="date" id="data" name="data" required />
+            </div>
+
+            <div class="form-group">
+              <label for="numeroCarga">Nº da carga *</label>
+              <input type="text" id="numeroCarga" name="numeroCarga" placeholder="Ex: 12345" required />
+            </div>
+
+            <div class="form-group">
+              <label for="transportadora">Transportadora *</label>
+              <input type="text" id="transportadora" name="transportadora" placeholder="Nome da transportadora" required />
+            </div>
+
+            <div class="form-group">
+              <label for="rota">Rota</label>
+              <input type="text" id="rota" name="rota" placeholder="Ex: SP - RJ" />
+            </div>
+
+            <div class="form-group">
+              <label for="volumes">Volumes</label>
+              <input type="number" id="volumes" name="volumes" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="pedidos">Pedidos</label>
+              <input type="number" id="pedidos" name="pedidos" min="0" />
+            </div>
+
+            <div class="form-group">
+              <label for="carregador">Carregado por</label>
+              <input type="text" id="carregador" name="carregador" placeholder="Nome do carregador" />
+            </div>
+
+            <div class="form-group">
+              <label for="situacao">Situação</label>
+              <select id="situacao" name="situacao">
+                <option value="ok">OK</option>
+                <option value="problema">Problema</option>
+              </select>
+            </div>
+
+            <div class="form-group form-group--full">
+              <label for="observacoes">Observações</label>
+              <textarea id="observacoes" name="observacoes" rows="3" placeholder="Ex: Avaria em 1 volume, pendência na documentação..."></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-primary">Salvar carga</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Card de filtros e resumo -->
+        <section class="card filters-card">
+          <div class="card-header">
+            <h2>Filtros & Resumo</h2>
+            <p class="card-caption">Filtre as cargas e acompanhe o total.</p>
+          </div>
+
+          <div class="filters-grid">
+            <div class="form-group">
+              <label for="filtro-data">Filtrar por data</label>
+              <input type="date" id="filtro-data" />
+            </div>
+
+            <div class="form-group">
+              <label for="filtro-busca">Busca geral</label>
+              <input
+                type="text"
+                id="filtro-busca"
+                placeholder="Nº carga, transportadora, rota, observações..."
+              />
+            </div>
+
+            <div class="filters-actions">
+              <button id="btn-limpar-filtros" class="btn-ghost btn-sm">Limpar filtros</button>
+              <button id="btn-exportar" class="btn-outline btn-sm">Exportar PDF</button>
+            </div>
+          </div>
+
+          <div class="summary-grid">
+            <div class="summary-item">
+              <span class="summary-label">Cargas</span>
+              <span id="total-cargas" class="summary-value">0</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Volumes</span>
+              <span id="total-volumes" class="summary-value">0</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-label">Pedidos</span>
+              <span id="total-pedidos" class="summary-value">0</span>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Lista de cargas -->
+      <section class="card list-card">
+        <div class="card-header">
+          <h2>Cargas registradas</h2>
+          <p class="card-caption">As cargas mais recentes aparecem primeiro.</p>
+        </div>
+        <div id="cargas-list" class="cargas-list">
+          <!-- Cards são renderizados pelo app.js -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
